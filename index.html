@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	  <title>TBC Software Timeclock</title>
+	  <META NAME="robots" CONTENT="noindex, nofollow">
+	  <META NAME="GOOGLEBOT" CONTENT="NOINDEX, NOFOLLOW">
+	  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	  <meta http-equiv="Pragma" content="no-cache">
+	  <meta http-equiv="Expires" content="1"> 
+	  <link rel="icon" href="favicon.gif" type="image/x-icon" />
+	  <link rel="shortcut icon" href="favicon.gif" type="image/x-icon" />
+	  <meta http-equiv=\"Content-Type\" content=\"text/html;\">
+	  <meta name="viewport" content="width=device-width" />
+	  <script type="text/JavaScript" src="jsproc.js"></script>
+	  <script type="text/javascript" src="JQuery/jquery.js"></script>
+	  <script type="text/javascript" src="JQuery/jquery-ui.js"></script>
+	  <link rel="stylesheet" type="text/css" href="JQuery/jquery-ui.css">
+	  <link rel="stylesheet" type="text/css" href="style.css">
+	  
+	  <script>
+	    $(document).ready(function () {
+		    doinclude();
+		    
+		$("#cardform").submit(function() {
+		    return false;
+		});
+				    
+	    });
+	</script>	  
+  </head>
+  
+  <body onload="loadSysdata(); jumpCursor()">
+	<div id="clocktitle">Clock Time:
+		<div id="txt"></div>
+	</div>
+	<div id="roundclock">You will be clocked in at:
+		<div id="txt2"></div>
+	</div>
+	<div id="cardcontainer">
+		<div id="cardswipe">Please Swipe Card
+	        <form id="cardform">
+			  <div id="carddiv">Card ID # <input type="text" id="cardinput" name="cardinput" onChange="return checkClockno(this.value)"></div>
+	        </form>
+		</div>
+    </div>
+	<div id="logincontainer">
+	  <div id="loginmessage"></div>
+        <form id="loginform" action="..\authportal\index.html">
+		  <div id="logindiv" style="margin:auto;text-align:center;">
+		    <INPUT TYPE="submit" VALUE="Go to Login System">
+          </div>
+        </form>
+    </div>    
+	<div id="alertdiv" title="Time Clock System">
+	  <div id="alertmessage"></div>
+	  <div id="alertsavemessage"></div>
+	  <form id="alertform">
+	    <table id="alerttable"></table>
+      </form>
+    </div>
+    
+	<div id="taskdiv">
+	  <div id="taskmessage"></div>
+		<div id="taskinner">
+		  <table id="tasktable" align="center">
+		  </table>
+		</div>
+    </div>
+    
+	<div id="letterdiv">
+	  <div id="lettermessage"></div>
+		<div id="letterinner">
+		  <table id="lettertable" align="center">
+			</table>
+		</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,2 @@
+jsonuserid = "jsonuser";
+jsonpasswd = "jsonpass";
